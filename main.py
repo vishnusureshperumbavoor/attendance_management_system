@@ -35,12 +35,13 @@ def markAttendance(name):
                 now = datetime.now()
                 dtString = now.strftime('%H:%M:%S')
                 f.writelines(f'\n{name},{dtString}')
-
+                
 
 while True:
     ret, frame = video_capture.read()
 
     small_frame = cv2.resize(frame, (0, 0), fx=0.25, fy=0.25)
+
 
     rgb_small_frame = small_frame[:, :, ::-1]
 
