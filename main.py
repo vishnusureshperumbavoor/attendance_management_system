@@ -3,6 +3,10 @@ import cv2
 import numpy as np
 from datetime import datetime
 video_capture = cv2.VideoCapture(0)
+width = 1285  # Set the desired width
+height = 720  # Set the desired height
+video_capture.set(cv2.CAP_PROP_FRAME_WIDTH, width)
+video_capture.set(cv2.CAP_PROP_FRAME_HEIGHT, height)
 
 elon_image = face_recognition.load_image_file("images/Elon.jpg")
 elon_face_encoding = face_recognition.face_encodings(elon_image)[0]
